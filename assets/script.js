@@ -32,8 +32,6 @@ function addDots(){
 
 addDots();
 
-
-let dot = document.querySelectorAll('#banner .dots div');
 const img = document.querySelector('#banner img');
 const p = document.querySelector('#banner p');
 
@@ -43,6 +41,12 @@ let index = 0;
 function dotLeft(){
 	const dotSelected = document.querySelector('.dots .dot_selected');
 	dotSelected.previousElementSibling.classList.add('dot_selected');
+	dotSelected.classList.remove('dot_selected');
+}
+
+function dotRight(){
+	const dotSelected = document.querySelector('.dots .dot_selected');
+	dotSelected.nextElementSibling.classList.add('dot_selected');
 	dotSelected.classList.remove('dot_selected');
 }
 
@@ -65,12 +69,6 @@ document.querySelector('#banner .arrow_left').addEventListener('click', function
 		imageChange();
 	}
 });
-
-function dotRight(){
-	const dotSelected = document.querySelector('.dots .dot_selected');
-	dotSelected.nextElementSibling.classList.add('dot_selected');
-	dotSelected.classList.remove('dot_selected');
-}
 
 document.querySelector('#banner .arrow_right').addEventListener('click', function(event){
 	event.stopPropagation();
